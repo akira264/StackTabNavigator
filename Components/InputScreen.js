@@ -46,7 +46,8 @@ export  class InputScreen extends React.Component {
                     style={{ fontSize: 18, color: 'white' }}
                     onPress={() => {
                         const {movieName, releaseYear} = this.state;  
-                        this.props.onAddMovie({name: movieName, releaseYear: releaseYear});                        
+                        this.props.onAddMovie({name: movieName, releaseYear: releaseYear});  
+                        this.props.navigation.navigate('Confirm');  
                     }}>
                     Add Movie
                 </Button>

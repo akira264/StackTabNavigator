@@ -10,8 +10,15 @@ export   class ListScreen extends React.Component {
         super(props);
         this.state = { movieName: '', releaseYear: '' };
     }
-
+    componentDidMount() {
+        if(this.props.navigation.isFocused()){
+            
+            this.props.onFetchMovie();
+        }
+      }
   render() {
+      console.log('check when focus list screen : ' + this.props.navigation.isFocused())
+      
     return (
         <View style={{ flex: 1, marginTop : 30}}>
             <Text style={{ margin: 10, fontWeight: 'bold', color: 'forestgreen', fontSize: 20 }}>

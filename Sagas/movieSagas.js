@@ -5,6 +5,7 @@ import { Api } from './Api';
 import { fetchMoviesAction } from '../Actions/Index';
 
 function* fetchMovies(){
+    console.log(" run fetchMovies saga");
     try {
         const receivedMovies = yield Api.getMoviesFromApi();
         yield put({type: FETCH_SUCCEEDED, receivedMovies : receivedMovies})
